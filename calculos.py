@@ -45,130 +45,6 @@ def probabilidadEmpirica():
     casosFavorables=0
     casoAcomprobar= listaDespegableItems.get()
     result=""
-    #1000 observaciones
-    for i in range (1000) :
-        df['invocadores'].get(i)
-        if(df['invocadores'].get(i)=="Senor de la luna"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1  
-        if(df['invocadores'].get(i)=="Plantera"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-        if(df['invocadores'].get(i)=="Emperatriz de la luz"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1   
-        if(df['invocadores'].get(i)=="Golem"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1 
-        if(df['invocadores'].get(i)=="Duque Fishron"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-        if(df['invocadores'].get(i)=="none"):
-            result="no se encontro invocador"
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-    total=casosFavorables/1000
-    tkinter.Label(window,text="Analisis con 1000 datos",font=12).place(x=33,y=160)
-    tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=190)
-    tkinter.Label(window,text=casosFavorables,font=12).place(x=170,y=190)
-    tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=210)
-    tkinter.Label(window,text=total,font=12).place(x=150,y=210)
-    #5000 observaciones
-    for i in range (5000) :
-        df['invocadores'].get(i)
-        if(df['invocadores'].get(i)=="Senor de la luna"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-            
-        if(df['invocadores'].get(i)=="Plantera"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-            
-        if(df['invocadores'].get(i)=="Emperatriz de la luz"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-            
-        if(df['invocadores'].get(i)=="Golem"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-
-            
-        if(df['invocadores'].get(i)=="Duque Fishron"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-        if(df['invocadores'].get(i)=="none"):
-            result="no se encontro invocador"
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-    total=casosFavorables/5000   
-    tkinter.Label(window,text="Analisis con 5000 datos",font=12).place(x=33,y=240)
-    tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=270)
-    tkinter.Label(window,text=casosFavorables,font=12).place(x=170,y=270)
-    tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=300)
-    tkinter.Label(window,text=total,font=12).place(x=150,y=300)
-    #10000 observaciones
-    for i in range (10000) :
-        df['invocadores'].get(i)
-        if(df['invocadores'].get(i)=="Senor de la luna"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-            
-        if(df['invocadores'].get(i)=="Plantera"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-            
-        if(df['invocadores'].get(i)=="Emperatriz de la luz"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-            
-        if(df['invocadores'].get(i)=="Golem"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-
-            
-        if(df['invocadores'].get(i)=="Duque Fishron"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-        if(df['invocadores'].get(i)=="none"):
-            result="no se encontro invocador"
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-    total=casosFavorables/10000   
-    tkinter.Label(window,text="Analisis con 10000 datos",font=12).place(x=33,y=330)
-    tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=360)
-    tkinter.Label(window,text=casosFavorables,font=12).place(x=170,y=360)
-    tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=390)
-    tkinter.Label(window,text=total,font=12).place(x=150,y=390)
     #100000 observaciones
     for i in range (100000) :
         df['invocadores'].get(i)
@@ -194,9 +70,7 @@ def probabilidadEmpirica():
             salida= df['items'].get(i) 
             result=salida
             if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-
-            
+                casosFavorables=casosFavorables+1      
         if(df['invocadores'].get(i)=="Duque Fishron"):
             salida= df['items'].get(i) 
             result=salida
@@ -206,12 +80,34 @@ def probabilidadEmpirica():
             result="no se encontro invocador"
             if(result==casoAcomprobar):
                 casosFavorables=casosFavorables+1
-    total=casosFavorables/100000   
-    tkinter.Label(window,text="Analisis con 100000 datos",font=12).place(x=33,y=410)
-    tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=440)
-    tkinter.Label(window,text=casosFavorables,font=12).place(x=170,y=440)
-    tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=470)
-    tkinter.Label(window,text=total,font=12).place(x=150,y=470)
+        if(i==999):
+            total=casosFavorables/1000
+            tkinter.Label(window,text="Analisis con 1000 datos",font=12).place(x=33,y=160)
+            tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=190)
+            tkinter.Label(window,text=casosFavorables,font=12).place(x=170,y=190)
+            tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=210)
+            tkinter.Label(window,text=total,font=12).place(x=150,y=210)
+        if(i==4999):
+            total=casosFavorables/5000   
+            tkinter.Label(window,text="Analisis con 5000 datos",font=12).place(x=33,y=240)
+            tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=270)
+            tkinter.Label(window,text=casosFavorables,font=12).place(x=170,y=270)
+            tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=300)
+            tkinter.Label(window,text=total,font=12).place(x=150,y=300)
+        if(i==9999):
+            total=casosFavorables/10000   
+            tkinter.Label(window,text="Analisis con 10000 datos",font=12).place(x=33,y=330)
+            tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=360)
+            tkinter.Label(window,text=casosFavorables,font=12).place(x=170,y=360)
+            tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=390)
+            tkinter.Label(window,text=total,font=12).place(x=150,y=390)
+        if(i==99999):
+            total=casosFavorables/100000   
+            tkinter.Label(window,text="Analisis con 100000 datos",font=12).place(x=33,y=410)
+            tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=440)
+            tkinter.Label(window,text=casosFavorables,font=12).place(x=170,y=440)
+            tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=470)
+            tkinter.Label(window,text=total,font=12).place(x=150,y=470)
     END
 
 tkinter.Button(window,text="llenar Tabla",font=12,command=llenarTabla).place(x=33,y=80)
