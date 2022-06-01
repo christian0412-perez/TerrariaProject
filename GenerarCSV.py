@@ -1,6 +1,4 @@
-
 import pandas as pd
-
 import tkinter
 import tkinter.filedialog
 from tkinter.constants import END
@@ -14,6 +12,7 @@ window.geometry("200x200")
 #valores
 invocadores=["Senor de la luna","Plantera","Emperatriz de la luz","Golem","Duque Fishron","none"]
 resultList={"items": [], "invocadores": []}
+
 def generarRandom():
     invoker=len(invocadores)
     aux2=0
@@ -50,13 +49,15 @@ def generarRandom():
         salida.clear()
         
         resultList['invocadores'].append(invocadores[aux2])
-        resultList['items'].append(result)
-    df =    pd.DataFrame(resultList)
-    df.to_csv('./output.csv')
-        
+        resultList['items'].append(result)  
+    generarCSV()
+END
+    
+def generarCSV():
+        df =    pd.DataFrame(resultList)
+        df.to_csv('./output.csv')       
           
-
-    END
+END
 
 tkinter.Button(window,text="generar datos",font=12,command=generarRandom).place(x=50,y=70)
 window.mainloop()
