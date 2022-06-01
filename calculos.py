@@ -22,6 +22,7 @@ items= ["Filomiau","Terrariano","Bengala Lunar","Espectro estelar","ADEE","Celeb
 "Venus Magnum"," Florecillas","Lanzahojas","Lanzagranadas","Gancho de espinas","Brillo nocturno","Caleidoscopio",
 "Anochecer","Luz Estelar","Stynger","Hacha de mano poseida","piedra del sol","Ojo de golem","Rayo calorifico",
 "Baculo de tierra", "puno de golem","Tsunami","Baculo de tempestades","Tifon de cuchillas","Flairon", "Arma de burbujas","fallo","no se encontro invocador"]
+invocadores2=["Senor de la luna","Plantera","Emperatriz de la luz","Golem","Duque Fishron","none"]
 resultList={"items": [], "invocadores": []}
 #combo select item
 listaDespegableItems = ttk.Combobox(window, width=30)
@@ -62,38 +63,12 @@ def probabilidadEmpirica():
     result=""
     for i in range (100000) :
         df['invocadores'].get(i)
-        if(df['invocadores'].get(i)=="Senor de la luna"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-            
-        if(df['invocadores'].get(i)=="Plantera"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-            
-        if(df['invocadores'].get(i)=="Emperatriz de la luz"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-            
-        if(df['invocadores'].get(i)=="Golem"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1      
-        if(df['invocadores'].get(i)=="Duque Fishron"):
-            salida= df['items'].get(i) 
-            result=salida
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
-        if(df['invocadores'].get(i)=="none"):
-            result="no se encontro invocador"
-            if(result==casoAcomprobar):
-                casosFavorables=casosFavorables+1
+        for j in range(len(invocadores2)):
+            if(df['invocadores'].get(i)==invocadores2[j]):
+                salida= df['items'].get(i) 
+                result=salida
+                if(result==casoAcomprobar):
+                    casosFavorables=casosFavorables+1
         if(i==999):
             total=casosFavorables/1000
             tkinter.Label(window,text=casosFavorables,font=12).place(x=220,y=190)
