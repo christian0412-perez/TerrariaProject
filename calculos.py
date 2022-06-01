@@ -40,12 +40,25 @@ def llenarTabla():
     for i in range(100000):
         table.insert('','end',values=(i,df['invocadores'].get(i),df['items'].get(i)))
 
+def llenarVisual():
+    tkinter.Label(window,text="Analisis con 1000 datos",font=12).place(x=33,y=160)
+    tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=190)
+    tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=210)
+    tkinter.Label(window,text="Analisis con 5000 datos",font=12).place(x=33,y=240)
+    tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=270)
+    tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=300)
+    tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=390)
+    tkinter.Label(window,text="Analisis con 10000 datos",font=12).place(x=33,y=330)
+    tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=360)
+    tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=470)
+    tkinter.Label(window,text="Analisis con 100000 datos",font=12).place(x=33,y=410)
+    tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=440)
+
 def probabilidadEmpirica():
     salida=''
     casosFavorables=0
     casoAcomprobar= listaDespegableItems.get()
     result=""
-    #100000 observaciones
     for i in range (100000) :
         df['invocadores'].get(i)
         if(df['invocadores'].get(i)=="Senor de la luna"):
@@ -82,32 +95,21 @@ def probabilidadEmpirica():
                 casosFavorables=casosFavorables+1
         if(i==999):
             total=casosFavorables/1000
-            tkinter.Label(window,text="Analisis con 1000 datos",font=12).place(x=33,y=160)
-            tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=190)
             tkinter.Label(window,text=casosFavorables,font=12).place(x=170,y=190)
-            tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=210)
             tkinter.Label(window,text=total,font=12).place(x=150,y=210)
         if(i==4999):
             total=casosFavorables/5000   
-            tkinter.Label(window,text="Analisis con 5000 datos",font=12).place(x=33,y=240)
-            tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=270)
             tkinter.Label(window,text=casosFavorables,font=12).place(x=170,y=270)
-            tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=300)
             tkinter.Label(window,text=total,font=12).place(x=150,y=300)
         if(i==9999):
             total=casosFavorables/10000   
-            tkinter.Label(window,text="Analisis con 10000 datos",font=12).place(x=33,y=330)
-            tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=360)
             tkinter.Label(window,text=casosFavorables,font=12).place(x=170,y=360)
-            tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=390)
             tkinter.Label(window,text=total,font=12).place(x=150,y=390)
         if(i==99999):
             total=casosFavorables/100000   
-            tkinter.Label(window,text="Analisis con 100000 datos",font=12).place(x=33,y=410)
-            tkinter.Label(window,text="casos favorables = ",font=12).place(x=33,y=440)
             tkinter.Label(window,text=casosFavorables,font=12).place(x=170,y=440)
-            tkinter.Label(window,text="probabilidad = ",font=12).place(x=33,y=470)
             tkinter.Label(window,text=total,font=12).place(x=150,y=470)
+    llenarVisual()
     END
 
 tkinter.Button(window,text="llenar Tabla",font=12,command=llenarTabla).place(x=33,y=80)
